@@ -1,0 +1,57 @@
+<!Doctype html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<title>Kiwigrid Testaufgabe - Martin Himstedt</title>
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+	<form ng-submit="submit()" ng-controller="WeatherGeolocation" class="form-weatherapp">
+		<ul class="list-form clearfix">
+			<li class="item-form">
+				<input type="text" placeholder="Breitengrad" ng-model="latitude" name="latitude" required />
+			</li>
+			<li class="item-form">
+				<input type="text" placeholder="Längengrad" ng-model="longitude" name="longitude" required />
+			</li>
+			<li class="item-form">
+				<button type="submit" id="submit">Wetter anzeigen</button>
+			</li>
+		</ul>
+		<ul class="list-result">
+			<li>
+				<div class="list-currently">
+					<div class="box-summary">{{ result.currently.summary }}</div>
+					<div class="box-temperature">{{ result.currently.temperature | number:0 }}°</div>
+				</div>
+			</li>
+			<li>
+				<ul class="list-hourly clearfix">
+					<li ng-repeat="value in result.hourly.data | limitTo: 6">
+						<div class="box-day">{{ value.time*1000 | date:'EEE' }}</div>
+						<div class="box-time">{{ value.time*1000 | date:'H' }} Uhr</div>
+						<div class="box-icon icon icon-{{value.icon}}"></div>
+						<div class="box-temperature">{{ value.temperature | number:0 }} °C</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="list-daily">
+					<li ng-repeat="value in result.daily.data" class="clearfix">
+						<div class="box-day">{{ value.time*1000 | date:'EEEE'}}</div>
+						<div class="box-icon icon icon-{{value.icon}}"></div>
+						<div class="box-temperature">
+							<span class="temperature-min">{{ value.temperatureMin | number:0 }} °C</span>
+							<span class="temperature-max">{{ value.temperatureMax | number:0 }} °C</span>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.min.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/controllers/weatherData.js"></script>
+	<script src="scripts/service/forecast.js"></script>
+</body>

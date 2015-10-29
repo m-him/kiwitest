@@ -1,0 +1,226 @@
+/* reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* weather app */
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+html {
+	min-height: 100%;
+}
+
+body {
+	font: 1em/1.5em arial;
+	color: #444;
+	background: #22A7F0;
+	background: -moz-linear-gradient(top,  #3DB4F5 0%, #22A7F0 100%);
+	background: -webkit-linear-gradient(top,  #3DB4F5 0%,#22A7F0 100%);
+	background: linear-gradient(top bottom,  #3DB4F5 0%,#22A7F0 100%);
+}
+
+.form-weatherapp {
+	box-shadow: 0 0 10em #fff;
+    margin: 1em auto;
+    max-width: 32em;
+    overflow: hidden;
+}
+
+.list-currently,
+.list-hourly,
+.list-daily {
+	box-shadow:0 -1px 0 0 rgba(255, 255, 255, 0.5);
+	padding: 1em 3em;
+}
+
+.list-form {
+	background: #fff;
+	box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.item-form {
+	display: block;
+	float: left;
+	width: 33.33%;
+	padding: 1em;
+	box-sizing: border-box;
+}
+
+input[type="text"], button {
+	width: 100%;
+	height: 2.5em;
+	line-height: 2.5em;
+	padding: 0 1em;
+	box-sizing: border-box;
+}
+
+button {
+	background: #2390CC;
+	border: none;
+	color: #fff;
+}
+
+.list-result {
+	color: #fff;
+}
+
+.list-currently {
+	text-align: center
+}
+
+.list-currently .box-temperature {
+	font-size: 6em;
+	line-height: 1em;
+}
+
+.list-currently .box-summary {
+	font-size: 1.25em;
+	line-height: 2em;
+}
+
+.list-hourly .box-icon {
+	font-size: 2.5em;
+}
+
+.list-hourly .box-day {
+    font-size: 0.75em;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+.list-hourly li {
+	display: block;
+	float:left;
+	width: 16.66%;
+    text-align: center;
+}
+
+.list-daily li {
+	box-shadow:0 1px 0 0 rgba(255, 255, 255, 0.1);
+	padding: 0.25em 0 0.125em;
+}
+
+.list-daily li > div {
+	display: block;
+	float: left;
+	width: 33.33%;
+}
+
+.list-daily .box-icon {
+	text-align: center;
+}
+.list-daily .box-temperature {
+	text-align: right;
+}
+.list-daily .temperature-max {
+	opacity: 0.5;
+}
+
+
+
+/* icons */
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?ncgt92');
+	src:url('fonts/icomoon.eot?ncgt92#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?ncgt92') format('truetype'),
+		url('fonts/icomoon.woff?ncgt92') format('woff'),
+		url('fonts/icomoon.svg?ncgt92#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+}
+
+.icon-clear-day:before {
+	content: "\e901";
+}
+.icon-clear-night:before {
+	content: "\e902";
+}
+.icon-rain:before {
+	content: "\e911";
+}
+.icon-partly-cloudy:before {
+	content: "\e907";
+}
+.icon-partly-cloudy-day:before {
+	content: "\e907";
+}
+.icon-partly-cloudy-night:before {
+	content: "\e91e";
+}
+.icon-snow:before {
+	content: "\e916";
+}
+.icon-wind:before {
+	content: "\e912";
+}
+.icon-fog:before {
+	content: "\e90c";
+}
+.icon-cloudy:before {
+	content: "\e918";
+}
